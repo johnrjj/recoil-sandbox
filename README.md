@@ -1,44 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview
 
-## Available Scripts
+Hey there!
 
-In the project directory, you can run:
+Here's my CSS frontend coding submission. I hope it's a good jumping off point for some future discussions. Enjoy!
 
-### `yarn start`
+# To run
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Experience the app in production mode, by building it and serving it locally:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`yarn && yarn build && yarn serve`.
 
-### `yarn test`
+Then navigate to http://localhost:5000
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Remember:** the web app expects you to be running a local websocket feed at `localhost:4000`. The app will contintiously retry for a websocket connection. If you're running the websocket on another endpoint, use the env var below. The websocket server is *not* included in this repo.
 
-### `yarn build`
+## Env vars
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`WEBSOCKET_ENDPOINT` - Defaults to `http://localhost:4000` if not defined
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+e.g. `WEBSOCKET_ENDPOINT=http://localhost:8000 yarn build`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Commands
 
-### `yarn eject`
+`yarn start` - Dev mode
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`yarn build` - Production build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`yarn serve` - Tiny HTTP serve to serve the production `build` folder after you build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Notes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- If the app crashes (it shouldn't), turn off concurrent mode in `index.tsx`.
