@@ -1,8 +1,5 @@
 # Overview
 
-Hey there!
-
-Here's my CSS frontend coding submission. I hope it's a good jumping off point for some future discussions. Enjoy!
 
 # To run
 
